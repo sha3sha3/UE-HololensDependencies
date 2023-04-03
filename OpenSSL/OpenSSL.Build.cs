@@ -11,7 +11,7 @@ public class OpenSSL : ModuleRules
 
 		string OpenSSL111cPath = Path.Combine(Target.UEThirdPartySourceDirectory, "OpenSSL", "1.1.1c");
 		string OpenSSL111kPath = Path.Combine(Target.UEThirdPartySourceDirectory, "OpenSSL", "1.1.1k");
-        string OpenSSL111SPath = Path.Combine(Target.UEThirdPartySourceDirectory, "OpenSSL", "1.1.1s");
+        string OpenSSL111TPath = Path.Combine(Target.UEThirdPartySourceDirectory, "OpenSSL", "1.1.1t");
 		string PlatformSubdir = Target.Platform.ToString();
 		string ConfigFolder = (Target.Configuration == UnrealTargetConfiguration.Debug && Target.bDebugBuildsActuallyUseDebugCRT) ? "Debug" : "Release";
 
@@ -42,10 +42,10 @@ public class OpenSSL : ModuleRules
 		{
 
 			// Add includes
-			PublicIncludePaths.Add(Path.Combine(OpenSSL111SPath, "include", "Hololens"));
+			PublicIncludePaths.Add(Path.Combine(OpenSSL111TPath, "include", "Hololens"));
 
 			// Add Libs
-			string LibPath = Path.Combine(OpenSSL111SPath, "lib", "Hololens");
+			string LibPath = Path.Combine(OpenSSL111TPath, "lib", "Hololens");
 
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libssl.lib"));
 			PublicAdditionalLibraries.Add(Path.Combine(LibPath, "libcrypto.lib"));
